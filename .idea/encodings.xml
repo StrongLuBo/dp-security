@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/dp-security" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/dp-security/dp-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/dp-security/dp-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/dp-security/dp-orm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/dp-security/dp-shiro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/dp-security/dp-web" charset="UTF-8" />
+  </component>
+</project>
