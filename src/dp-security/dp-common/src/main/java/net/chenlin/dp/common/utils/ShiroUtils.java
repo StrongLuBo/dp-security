@@ -20,7 +20,7 @@ public class ShiroUtils {
 		return SecurityUtils.getSubject().getSession();
 	}
 
-	public static Subject getSubject() {
+	public static org.apache.shiro.subject.Subject getSubject() {
 		return SecurityUtils.getSubject();
 	}
 	

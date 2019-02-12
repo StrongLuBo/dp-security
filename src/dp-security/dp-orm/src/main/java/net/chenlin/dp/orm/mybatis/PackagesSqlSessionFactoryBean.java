@@ -23,7 +23,9 @@ import org.springframework.util.ClassUtils;
  * @email yczclcn@163.com
  * @url www.chenlintech.com
  * @date 2017年8月8日 上午11:28:59
+ *
  */
+
 public class PackagesSqlSessionFactoryBean extends SqlSessionFactoryBean {
 
 	static final String DEFAULT_RESOURCE_PATTERN = "**/*.class";
