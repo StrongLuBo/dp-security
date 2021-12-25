@@ -22,6 +22,7 @@ import com.luzhibo.dp.common.entity.Page;
 /**
  * PaginationResultSetHandlerInterceptor
  *
+ * @author 89754
  */
 @Intercepts({ @Signature(type = ResultSetHandler.class, method = "handleResultSets", args = { Statement.class }) })
 public class PaginationResultSetHandlerInterceptor implements Interceptor {

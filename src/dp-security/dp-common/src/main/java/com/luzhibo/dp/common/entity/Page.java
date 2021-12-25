@@ -6,9 +6,7 @@ import org.apache.ibatis.session.RowBounds;
 
 /**
  * Mybatis分页参数及查询结果封装. 注意所有序号从1开始
- *
- *
- * 2017年8月8日 上午11:41:07
+ * @author 89754
  */
 public class Page<T> extends RowBounds {
     

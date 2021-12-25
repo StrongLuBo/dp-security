@@ -9,9 +9,7 @@ import com.luzhibo.dp.shiro.entity.SysRoleMenuEntity;
 
 /**
  * 系统角色与菜单关系
- *
- *
- * 2017年8月13日 下午8:32:26
+ * @author 89754
  */
 @MapperScan
 public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenuEntity> {
@@ -19,21 +17,21 @@ public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenuEntity> {
 	/**
 	 * 根据菜单ID删除
 	 * @param id
-	 * @return
+	 * @return int
 	 */
 	int batchRemoveByMenuId(Long[] id);
 
 	/**
 	 * 根据角色ID删除
 	 * @param id
-	 * @return
+	 * @return int
 	 */
 	int batchRemoveByRoleId(Long[] id);
 
 	/**
 	 * 根据菜单ID查询
 	 * @param id
-	 * @return
+	 * @return List<Long>
 	 */
 	List<Long> listMenuId(Long id);
 	

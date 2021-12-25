@@ -4,9 +4,7 @@ import org.apache.ibatis.session.Configuration;
 
 /**
  * 数据库方言工厂,产生方言对象
- *
- *
- * 2017年8月8日 上午11:06:30
+ * @author 89754
  */
 public class DialectFactory {
 

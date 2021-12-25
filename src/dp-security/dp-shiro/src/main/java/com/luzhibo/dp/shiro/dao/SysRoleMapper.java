@@ -9,9 +9,7 @@ import com.luzhibo.dp.shiro.entity.SysRoleEntity;
 
 /**
  * 系统角色
- *
- *
- * 2017年8月12日 上午12:35:51
+ * @author 89754
  */
 @MapperScan
 public interface SysRoleMapper extends BaseMapper<SysRoleEntity> {
@@ -19,7 +17,7 @@ public interface SysRoleMapper extends BaseMapper<SysRoleEntity> {
 	/**
 	 * 获取用户角色列表
 	 * @param userId
-	 * @return
+	 * @return  List<String>
 	 */
 	List<String> listUserRoles(Long userId);
 	

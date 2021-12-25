@@ -5,9 +5,7 @@ import java.util.Map;
 
 /**
  * 页面响应entity
- *
- *
- * 2017年8月8日 上午11:40:42
+ * @author 89754
  */
 public class R extends HashMap<String, Object> {
 	

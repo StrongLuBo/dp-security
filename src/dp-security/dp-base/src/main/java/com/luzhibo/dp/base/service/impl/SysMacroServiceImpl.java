@@ -15,6 +15,7 @@ import com.luzhibo.dp.common.utils.CommonUtils;
 
 /**
  * 通用字典
+ * @author 89754
  */
 @Service("sysMacroService")
 public class SysMacroServiceImpl implements SysMacroService {

@@ -5,9 +5,7 @@ import org.apache.shiro.util.ByteSource;
 
 /**
  * MD5加密工具
- *
- *
- * 2017年8月8日 下午5:17:34
+ * @author 89754
  */
 public class MD5Utils {
 

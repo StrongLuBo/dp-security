@@ -2,8 +2,7 @@ package com.luzhibo.dp.common.constant;
 
 /**
  * 系统级静态变量
- *
- * 2017年8月8日 下午1:35:38
+ * @author 89754
  */
 public class SystemConstant {
 	

@@ -5,9 +5,7 @@ import java.io.Serializable;
 
 /**
  * 角色与菜单对应关系
- *
- *
- * 2017年8月10日 上午10:48:34
+ * @author 89754
  */
 public class SysRoleMenuEntity implements Serializable {
 	

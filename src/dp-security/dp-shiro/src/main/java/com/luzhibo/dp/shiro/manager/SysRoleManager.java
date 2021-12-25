@@ -16,48 +16,48 @@ public interface SysRoleManager {
 	 * 查询角色列表
 	 * @param page
 	 * @param search
-	 * @return
+	 * @return List<SysRoleEntity>
 	 */
 	List<SysRoleEntity> listRole(Page<SysRoleEntity> page, Query search);
 
 	/**
 	 * 保存角色
 	 * @param role
-	 * @return
+	 * @return int
 	 */
 	int saveRole(SysRoleEntity role);
 
 	/**
 	 * 根据ID查询角色
 	 * @param id
-	 * @return
+	 * @return SysRoleEntity
 	 */
 	SysRoleEntity getRoleById(Long id);
 
 	/**
 	 * 根据ID更新角色信息
 	 * @param role
-	 * @return
+	 * @return int
 	 */
 	int updateRole(SysRoleEntity role);
 
 	/**
 	 * 根据ID批量删除角色
 	 * @param id
-	 * @return
+	 * @return int
 	 */
 	int batchRemove(Long[] id);
 
 	/**
 	 * 查询角色列表
-	 * @return
+	 * @return List<SysRoleEntity>
 	 */
 	List<SysRoleEntity> listRole();
 
 	/**
 	 * 更新角色
 	 * @param role
-	 * @return
+	 * @return int
 	 */
 	int updateRoleAuthorization(SysRoleEntity role);
 	

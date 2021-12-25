@@ -14,9 +14,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 系统日志
- *
- *
- * 2017年8月14日 下午8:41:29
+ * @author 89754
  */
 @Service("sysLogService")
 public class SysLogServiceImpl implements SysLogService {

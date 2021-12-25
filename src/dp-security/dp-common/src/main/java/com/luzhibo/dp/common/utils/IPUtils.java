@@ -8,13 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * IP地址
- *
- *
- * 2017年8月8日 下午12:02:56
+ * @author 89754
  */
 public class IPUtils {
 
-	private static Logger logger = LoggerFactory.getLogger(IPUtils.class);
+	private final static Logger logger = LoggerFactory.getLogger(IPUtils.class);
 
 	/**
 	 * 获取IP地址

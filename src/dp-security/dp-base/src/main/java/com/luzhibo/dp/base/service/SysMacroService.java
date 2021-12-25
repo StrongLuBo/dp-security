@@ -7,7 +7,6 @@ import com.luzhibo.dp.common.entity.R;
 
 /**
  * 通用字典
- *
  * @author 89754
  */
 public interface SysMacroService {

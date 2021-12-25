@@ -21,7 +21,7 @@ import com.luzhibo.dp.common.utils.ShiroUtils;
 
 /**
  * 认证
- *
+ * @author 89754
  */
 public class UserRealm extends AuthorizingRealm {
     

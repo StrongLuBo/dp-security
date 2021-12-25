@@ -2,9 +2,7 @@ package com.luzhibo.dp.orm.dialect;
 
 /**
  * oracle方言
- *
- *
- * 2017年8月8日 上午11:07:29
+ * @author 89754
  */
 public class OracleDialect extends Dialect {
 
@@ -35,7 +33,6 @@ public class OracleDialect extends Dialect {
 
     @Override
     public String getCountString(String sql) {
-        // TODO Oracle分页查询
         return null;
     }
 }

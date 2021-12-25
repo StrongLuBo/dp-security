@@ -6,9 +6,7 @@ import java.util.List;
 
 /**
  * 菜单
- *
- *
- * 2017年8月9日 下午11:15:17
+ * @author 89754
  */
 public class SysMenuEntity implements Serializable {
 	

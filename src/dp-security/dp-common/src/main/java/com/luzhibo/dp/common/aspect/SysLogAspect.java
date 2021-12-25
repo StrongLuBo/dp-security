@@ -24,7 +24,7 @@ import com.luzhibo.dp.common.utils.ShiroUtils;
 
 /**
  * 系统日志，切面处理类
- *
+ * @author 89754
  */
 @Aspect
 @Component

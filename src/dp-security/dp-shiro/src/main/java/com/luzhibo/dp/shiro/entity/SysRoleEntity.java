@@ -7,9 +7,7 @@ import java.util.List;
 
 /**
  * 角色
- *
- *
- * 2017年8月10日 上午10:48:22
+ * @author 89754
  */
 public class SysRoleEntity implements Serializable {
 	

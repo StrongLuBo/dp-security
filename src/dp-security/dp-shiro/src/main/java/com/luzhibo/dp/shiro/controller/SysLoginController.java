@@ -30,9 +30,7 @@ import com.luzhibo.dp.common.utils.ShiroUtils;
 
 /**
  * 用户controller
- *
- *
- * 2017年8月8日 下午2:48:50
+ * @author 89754
  */
 @Controller
 @RequestMapping("/sys")

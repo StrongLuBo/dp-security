@@ -9,9 +9,7 @@ import com.luzhibo.dp.shiro.entity.SysUserRoleEntity;
 
 /**
  * 用户与角色关系
- *
- *
- * 2017年8月13日 上午1:01:55
+ * @author 89754
  */
 @MapperScan
 public interface SysUserRoleMapper extends BaseMapper<SysUserRoleEntity> {
@@ -19,21 +17,21 @@ public interface SysUserRoleMapper extends BaseMapper<SysUserRoleEntity> {
 	/**
 	 * 获取用户角色ID
 	 * @param userId
-	 * @return
+	 * @return List<Long>
 	 */
 	List<Long> listUserRoleId(Long userId);
 
 	/**
 	 * 根据用户ID删除角色
 	 * @param id
-	 * @return
+	 * @return int
 	 */
 	int batchRemoveByUserId(Long[] id);
 
 	/**
 	 * 根据角色ID删除
 	 * @param id
-	 * @return
+	 * @return int
 	 */
 	int batchRemoveByRoleId(Long[] id);
 	

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 系统页面视图
- *
+ * @author 89754
  */
 @Controller
 public class SysPageController {
@@ -16,7 +16,7 @@ public class SysPageController {
 	 * @param module
 	 * @param function
 	 * @param url
-	 * @return
+	 * @return String
 	 */
 	@RequestMapping("{module}/{function}/{url}.html")
 	public String page(@PathVariable("module") String module, @PathVariable("function") String function,
@@ -28,7 +28,7 @@ public class SysPageController {
 	 * 页面跳转
 	 * @param module
 	 * @param url
-	 * @return
+	 * @return String
 	 */
 	@RequestMapping("{module}/{url}.html")
 	public String page(@PathVariable("module") String module, @PathVariable("url") String url) {

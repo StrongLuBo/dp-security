@@ -17,9 +17,7 @@ import com.luzhibo.dp.common.entity.SysUserEntity;
 
 /**
  * 系统用户
- *
- *
- * 2017年8月8日 下午9:04:59
+ * @author 89754
  */
 @RestController
 @RequestMapping("/sys/user")

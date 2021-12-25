@@ -9,9 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 
 /**
  * json工具类(fastjson)
- *
- *
- * 2017年8月11日 下午3:35:28
+ * @author 89754
  */
 public class JSONUtils {
 
@@ -19,7 +17,7 @@ public class JSONUtils {
 	 * Bean对象转JSON
 	 * @param object
 	 * @param dataFormatString
-	 * @return
+	 * @return String
 	 */
 	public static String beanToJson(Object object,String dataFormatString){
         if(object != null){
@@ -35,7 +33,7 @@ public class JSONUtils {
 	/**
 	 * Bean对象转JSON
 	 * @param object
-	 * @return
+	 * @return String
 	 */
 	public static String beanToJson(Object object){
         if(object != null){
@@ -49,7 +47,7 @@ public class JSONUtils {
 	 * String转JSON字符串
 	 * @param key
 	 * @param value
-	 * @return
+	 * @return String
 	 */
 	public static String stringToJsonByFastjson(String key,String value){
         if(StringUtils.isEmpty(key) || StringUtils.isEmpty(value)){
@@ -64,7 +62,7 @@ public class JSONUtils {
 	 * 将json字符串转换成对象
 	 * @param json
 	 * @param clazz
-	 * @return
+	 * @return Object
 	 */
 	public static Object jsonToBean(String json,Object clazz){
         if(StringUtils.isEmpty(json) || clazz == null){
@@ -76,7 +74,7 @@ public class JSONUtils {
 	/**
 	 * json字符串转map
 	 * @param json
-	 * @return
+	 * @return Map<String, Object>
 	 */
 	@SuppressWarnings("unchecked")
 	public static Map<String, Object> jsonToMap(String json) {

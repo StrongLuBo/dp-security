@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * http上下文
- *
- *
- * 2017年8月14日 下午8:04:00
+ * @author 89754
  */
 public class HttpContextUtils {
 

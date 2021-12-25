@@ -6,9 +6,7 @@ import com.luzhibo.dp.common.entity.R;
 
 /**
  * 通用工具类
- *
- *
- * 2017年8月12日 下午1:34:44
+ * @author 89754
  */
 public class CommonUtils {
 
@@ -16,7 +14,7 @@ public class CommonUtils {
 	 * 对象是否为空
 	 * 
 	 * @param obj
-	 * @return
+	 * @return boolean
 	 */
 	public static boolean isNullOrEmpty(Object obj) {
 		if (obj == null) {
@@ -29,7 +27,7 @@ public class CommonUtils {
 	 * 判断整数是否大于零
 	 * 
 	 * @param number
-	 * @return
+	 * @return boolean
 	 */
 	public static boolean isIntThanZero(int number) {
 		if (number > 0) {
@@ -41,7 +39,7 @@ public class CommonUtils {
 	/**
 	 * 新增，修改提示
 	 * @param count
-	 * @return
+	 * @return R
 	 */
 	public static R msg(int count) {
 		if(isIntThanZero(count)){
@@ -53,7 +51,7 @@ public class CommonUtils {
 	/**
 	 * 查询详情提示
 	 * @param data
-	 * @return
+	 * @return R
 	 */
 	public static R msg(Object data) {
 		if(isNullOrEmpty(data)){
@@ -65,7 +63,7 @@ public class CommonUtils {
 	/**
 	 * 返回数据
 	 * @param data
-	 * @return
+	 * @return R
 	 */
 	public static R msgNotNull(Object data) {
 		return R.ok().put(SystemConstant.DATA_ROWS, data);
@@ -75,7 +73,7 @@ public class CommonUtils {
 	 * 删除提示
 	 * @param total
 	 * @param count
-	 * @return
+	 * @return R
 	 */
 	public static R msg(Object[] total, int count) {
 		if(total.length == count){

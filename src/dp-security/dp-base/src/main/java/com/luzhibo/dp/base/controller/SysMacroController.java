@@ -15,7 +15,7 @@ import com.luzhibo.dp.common.entity.R;
 
 /**
  * 通用字典
- *
+ * @author 89754
  */
 @RestController
 @RequestMapping("/sys/macro")

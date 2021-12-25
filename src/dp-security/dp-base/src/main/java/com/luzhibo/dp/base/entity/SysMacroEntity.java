@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * 通用字典
+ * @author 89754
  */
 public class SysMacroEntity implements Serializable {
 

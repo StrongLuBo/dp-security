@@ -6,9 +6,7 @@ import java.sql.Timestamp;
 
 /**
  * 系统日志
- *
- *
- * 2017年8月14日 下午8:05:17
+ * @author 89754
  */
 public class SysLogEntity implements Serializable {
 	

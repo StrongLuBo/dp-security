@@ -6,9 +6,7 @@ import com.luzhibo.dp.common.exception.RRException;
 
 /**
  * SQL过滤
- *
- *
- * 2017年8月8日 下午12:00:08
+ * @author 89754
  */
 public class SQLFilter {
 

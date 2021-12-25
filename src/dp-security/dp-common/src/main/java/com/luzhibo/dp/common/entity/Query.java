@@ -6,9 +6,7 @@ import java.util.Map;
 
 /**
  * 查询条件
- *
- *
- * 2017年8月11日 下午12:13:58
+ * @author 89754
  */
 public class Query extends HashMap<String, Object> {
 	

@@ -13,9 +13,7 @@ import com.luzhibo.dp.common.entity.Query;
 
 /**
  * web工具类
- *
- *
- * 2017年8月13日 下午3:18:22
+ * @author 89754
  */
 public class WebUtils {
 	

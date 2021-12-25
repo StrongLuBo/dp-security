@@ -2,9 +2,7 @@ package com.luzhibo.dp.orm.dialect;
 
 /**
  * MSSQL 数据库方言
- *
- *
- * 2017年8月8日 上午110650
+ * @author 89754
  */
 public class MSDialect extends Dialect {
 

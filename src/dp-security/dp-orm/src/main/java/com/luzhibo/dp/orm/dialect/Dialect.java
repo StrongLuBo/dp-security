@@ -2,8 +2,7 @@ package com.luzhibo.dp.orm.dialect;
 
 /**
  * 数据库方言抽象类
- *
- *
+ * @author 89754
  */
 public abstract class Dialect {
 

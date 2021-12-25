@@ -17,9 +17,7 @@ import com.luzhibo.dp.shiro.service.SysUserService;
 
 /**
  * 系统用户
- *
- *
- * 2017年8月11日 上午11:47:17
+ * @author 89754
  */
 @Service("sysUserService")
 public class SysUserServiceImpl implements SysUserService {
