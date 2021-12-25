@@ -3,13 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>net.chenlin.dp</groupId>
+		<groupId>com.luzhibo.dp</groupId>
 		<artifactId>dp-security</artifactId>
-		<version>${dp-version}</version>
+		<version>1.0.0</version>
 	</parent>
 	<artifactId>dp-common</artifactId>
 	<name>dp-common</name>
-	<url>http://chenlintech.com</url>
 	<description>公共模块</description>
 	
 	<dependencies>

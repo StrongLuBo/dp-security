@@ -1,5 +1,5 @@
 /**
- * 编辑-角色管理js
+ * 编辑-订单管理js
  */
 var vm = new Vue({
 	el:'#dpLTE',

@@ -14,7 +14,7 @@
 		http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
 	<!-- 自动扫描包 ,将带有注解的类 纳入spring容器管理 -->
-	<context:component-scan base-package="net.chenlin.dp"></context:component-scan>
+	<context:component-scan base-package="com.luzhibo.dp"></context:component-scan>
 
 	<!-- 引入配置文件 -->
 	<context:property-placeholder location="classpath:db.properties" />
@@ -57,13 +57,13 @@
 
 	<!-- mybatis文件配置，扫描所有mapper文件 -->
 	<bean id="sqlSessionFactory"
-		class="net.chenlin.dp.orm.mybatis.PackagesSqlSessionFactoryBean"
-		p:dataSource-ref="dataSource" p:typeAliasesPackage="net.chenlin.dp.**.entity"
-		p:configLocation="classpath:mybatis.xml" p:mapperLocations="classpath:net/chenlin/dp/**/dao/*.xml" />
+		class="com.luzhibo.dp.orm.mybatis.PackagesSqlSessionFactoryBean"
+		p:dataSource-ref="dataSource" p:typeAliasesPackage="com.luzhibo.dp.**.entity"
+		p:configLocation="classpath:mybatis.xml" p:mapperLocations="classpath:com/luzhibo/dp/**/dao/*.xml" />
 
 	<!-- spring与mybatis整合配置，扫描所有dao -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
-		p:basePackage="net.chenlin.dp.**.dao" p:sqlSessionFactoryBeanName="sqlSessionFactory" />
+		p:basePackage="com.luzhibo.dp.**.dao" p:sqlSessionFactoryBeanName="sqlSessionFactory" />
 
 	<!-- 对dataSource 数据源进行事务管理 -->
 	<bean id="transactionManager"
@@ -96,7 +96,7 @@
 	<!-- 事务 aop 配置 -->
 	<aop:config>
 		<aop:pointcut id="serviceMethods"
-			expression="execution(* net.chenlin.dp.*.service.impl..*.*(..))" />
+			expression="execution(* com.luzhibo.dp.*.service.impl..*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
 	</aop:config>
 

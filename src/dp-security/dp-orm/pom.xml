@@ -3,13 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>net.chenlin.dp</groupId>
+    <groupId>com.luzhibo.dp</groupId>
     <artifactId>dp-security</artifactId>
-    <version>${dp-version}</version>
+    <version>1.0.0</version>
   </parent>
   <artifactId>dp-orm</artifactId>
   <name>dp-orm</name>
-  <url>http://maven.apache.org</url>
   <description>数据持久层</description>
   
   <dependencies>
@@ -21,7 +20,7 @@
     </dependency>
     
     <dependency>
-      <groupId>net.chenlin.dp</groupId>
+      <groupId>com.luzhibo.dp</groupId>
       <artifactId>dp-common</artifactId>
       <version>${dp-version}</version>
     </dependency>

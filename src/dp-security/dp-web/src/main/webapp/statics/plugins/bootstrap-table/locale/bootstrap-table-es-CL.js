@@ -1,6 +1,6 @@
 /**
  * Traducción de librería Bootstrap Table a Español (Chile)
- * @author Brian Álvarez Azócar
+ * Brian Álvarez Azócar
  * email brianalvarezazocar@gmail.com
  */
 (function($) {

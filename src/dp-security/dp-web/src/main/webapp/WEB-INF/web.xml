@@ -67,7 +67,7 @@
 
 	<filter>
 		<filter-name>xssFilter</filter-name>
-		<filter-class>net.chenlin.dp.common.xss.XssFilter</filter-class>
+		<filter-class>com.luzhibo.dp.common.xss.XssFilter</filter-class>
 	</filter>
 
 	<filter-mapping>
