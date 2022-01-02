@@ -38,7 +38,7 @@ public class OrderController  extends AbstractController {
 
     @RequestMapping("/findOrderById")
     public R findOrderById(@RequestBody Long id){
-        return tmOrderService.getObjectById(id);
+        return tmOrderService.findById(id);
     }
     @SysLog("修改订单")
     @RequestMapping("/update")

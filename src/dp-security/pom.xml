@@ -53,7 +53,7 @@
 		<jstl-version>1.2</jstl-version>
 		<taglibs-version>1.1.2</taglibs-version>
 		<freemarker-version>2.3.23</freemarker-version>
-
+		<lombok.version>1.18.12</lombok.version>
 	</properties>
 
 	<!-- 阿里云maven仓库 --> 
@@ -215,6 +215,13 @@
 			<artifactId>kaptcha</artifactId>
 			<version>${kaptcha-version}</version>
 		</dependency>
+			<!-- 让您的java更有趣：自动资源管理、自动生成getter、setter、equals、hashCode和toString，等等! -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<scope>provided</scope>
+			</dependency>
 		<!-- Velocity视图所需jar -->
 		<dependency>
 			<artifactId>velocity</artifactId>

@@ -1,5 +1,6 @@
 package com.luzhibo.dp.base.manager;
 
+import com.luzhibo.dp.base.entity.TmCustomerEntity;
 import com.luzhibo.dp.base.entity.TmOrderEntity;
 import com.luzhibo.dp.common.entity.Page;
 import com.luzhibo.dp.common.entity.Query;
@@ -26,26 +27,26 @@ public interface TmOrderManager {
      * @param order
      * @return
      */
-    R save(TmOrderEntity order);
+    int save(TmOrderEntity order);
 
     /**
      * 根据ID查询订单
      * @param id
      * @return
      */
-    R findById(Long id);
+    TmOrderEntity findById(Long id);
 
     /**
      * 根据ID更新订单
      * @param order
      * @return
      */
-    R update(TmOrderEntity order);
+    int update(TmOrderEntity order);
 
     /**
      * 根据ID批量删除订单信息
      * @param id
      * @return
      */
-    R batchRemove(Long[] id);
+    int batchRemove(Long[] id);
 }

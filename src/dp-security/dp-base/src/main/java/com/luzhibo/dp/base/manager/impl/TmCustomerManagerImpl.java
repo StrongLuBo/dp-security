@@ -29,23 +29,23 @@ public class TmCustomerManagerImpl implements TmCustomerManager {
 
 
     @Override
-    public R save(TmCustomerEntity order) {
-        return CommonUtils.msg(tmCustomerMapper.save(order));
+    public int save(TmCustomerEntity order) {
+        return tmCustomerMapper.save(order);
     }
 
     @Override
-    public R findById(Long id) {
-        return CommonUtils.msg(tmCustomerMapper.findById(id));
+    public TmCustomerEntity findById(Long id) {
+        return tmCustomerMapper.findById(id);
 
     }
 
     @Override
-    public R update(TmCustomerEntity order) {
-        return CommonUtils.msg(tmCustomerMapper.update(order));
+    public int update(TmCustomerEntity order) {
+        return tmCustomerMapper.update(order);
     }
 
     @Override
-    public R batchRemove(Long[] id) {
-        return CommonUtils.msg(tmCustomerMapper.batchRemove(id));
+    public int batchRemove(Long[] id) {
+        return tmCustomerMapper.batchRemove(id);
     }
 }

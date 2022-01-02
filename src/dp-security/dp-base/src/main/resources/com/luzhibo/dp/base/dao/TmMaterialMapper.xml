@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.luzhibo.dp.base.dao.TmMaterialMapper">
+
+    <resultMap id="BaseResultMap" type="com.luzhibo.dp.base.entity.TmMaterialEntity">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="model" column="model" jdbcType="VARCHAR"/>
+        <result property="specification" column="specification" jdbcType="VARCHAR"/>
+        <result property="unit" column="unit" jdbcType="TINYINT"/>
+        <result property="price" column="price" jdbcType="DECIMAL"/>
+        <result property="stocks" column="stocks" jdbcType="VARCHAR"/>
+        <result property="total" column="total" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="cost" column="cost" jdbcType="DECIMAL"/>
+        <result property="valid" column="valid" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,
+        name,
+        model,
+        specification,
+        unit,
+        price,
+        stocks,
+        total,
+        description,
+        cost,
+        valid,
+        create_time,
+        create_user,
+        update_time,
+        update_user
+    </sql>
+    <select id="listForPage" resultType="com.luzhibo.dp.base.entity.TmMaterialEntity">
+        select
+        <include refid="Base_Column_List"/>
+        from  tm_material t
+        <where>
+            <if test="name != null and name.trim() != ''">
+                AND t.name LIKE concat('%',#{name},'%')
+            </if>
+            <if test="model != null and model.trim() != ''">
+                AND t.model LIKE concat('%',#{model},'%')
+            </if>
+        </where>
+        order by t.create_time desc
+    </select>
+
+    <insert id="save">
+        insert into tm_material(
+            name,
+            model,
+            specification,
+            unit,
+            price,
+            stocks,
+            total,
+            description,
+            cost,
+            valid,
+            create_time,
+            create_user
+        )values(
+                   #{name},
+                   #{model},
+                   #{specification},
+                   #{unit},
+                   #{price},
+                   #{stocks},
+                   #{total},
+                   #{description},
+                   #{cost},
+                   #{valid},
+                   now(),
+                   #{createUser}
+               )
+    </insert>
+
+    <select id="findById" resultType="com.luzhibo.dp.base.entity.TmMaterialEntity">
+        select <include refid="Base_Column_List"/>
+        from tm_material t where t.id = #{id}
+
+    </select>
+
+    <update id="update">
+        UPDATE tm_material
+        <set>
+            <if test="name != null">name = #{name}, </if>
+            <if test="model != null">model = #{model}, </if>
+            <if test="specification != null">specification = #{specification}, </if>
+            <if test="unit != null">unit = #{unit}, </if>
+            <if test="price != null">price = #{price}, </if>
+            <if test="stocks != null">stocks = #{stocks}, </if>
+            <if test="total != null">total = #{total}, </if>
+            <if test="description != null">description = #{description}, </if>
+            <if test="cost != null">cost = #{cost}, </if>
+            <if test="valid != null">valid = #{valid}, </if>
+            update_time = now(),
+            <if test="updateUser != null">update_user = #{updateUser}, </if>
+        </set>
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="batchRemove">
+        DELETE
+        FROM
+        tm_material t
+        WHERE
+        t.id IN
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
