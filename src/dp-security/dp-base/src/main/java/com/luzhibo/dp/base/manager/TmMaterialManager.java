@@ -46,4 +46,10 @@ public interface TmMaterialManager {
      * @return int
      */
     int batchRemove(Long[] id);
+
+    /**
+     * 查询所有建材
+     * @return
+     */
+    List<TmMaterialEntity> list();
 }

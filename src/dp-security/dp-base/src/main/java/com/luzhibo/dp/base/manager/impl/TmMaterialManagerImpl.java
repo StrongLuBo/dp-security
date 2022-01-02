@@ -43,4 +43,9 @@ public class TmMaterialManagerImpl implements TmMaterialManager {
     public int batchRemove(Long[] id) {
         return tmMaterialMapper.batchRemove(id);
     }
+
+    @Override
+    public List<TmMaterialEntity> list() {
+        return tmMaterialMapper.list();
+    }
 }

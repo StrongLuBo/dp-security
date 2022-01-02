@@ -3,6 +3,7 @@ package com.luzhibo.dp.base.service.impl;
 import com.luzhibo.dp.base.entity.TmMaterialEntity;
 import com.luzhibo.dp.base.manager.TmMaterialManager;
 import com.luzhibo.dp.base.service.TmMaterialService;
+import com.luzhibo.dp.base.vo.MaterialListVo;
 import com.luzhibo.dp.common.entity.Page;
 import com.luzhibo.dp.common.entity.Query;
 import com.luzhibo.dp.common.entity.R;
@@ -10,6 +11,8 @@ import com.luzhibo.dp.common.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,5 +50,18 @@ public class TmMaterialServiceImpl implements TmMaterialService {
     @Override
     public R batchRemove(Long[] id) {
         return CommonUtils.msg(tmMaterialManager.batchRemove(id));
+    }
+
+    @Override
+    public List<MaterialListVo> listMaterial() {
+        List<TmMaterialEntity> list = tmMaterialManager.list();
+        List<MaterialListVo> materialListVos = new ArrayList<>();
+        for (TmMaterialEntity materialEntity : list) {
+            MaterialListVo materialListVo = new MaterialListVo();
+            materialListVo.setId(materialEntity.getId());
+            materialListVo.setMaterialName(materialEntity.getName());
+            materialListVos.add(materialListVo);
+        }
+        return materialListVos;
     }
 }

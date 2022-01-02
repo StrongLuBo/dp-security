@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>编辑-入库管理</title> #parse("include/header.html")
+</head>
+<body>
+	<div id="dpLTE" class="container-fluid" v-cloak>
+		<table class="form" id="form">
+			<tr>
+				<td class="formTitle">状态<font face="宋体">*</font></td>
+				<td class="formValue">
+					<input class="" name="checkbox1" id="checkbox01" type="radio" value="0" readonly="readonly" disabled="disabled" v-model="repertory.status"><label>入库</label>
+					<input class="" name="checkbox1" type="radio" value="1" readonly="readonly" disabled="disabled"  v-model="repertory.status"><label>出库</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="formTitle">数量<font face="宋体">*</font></td>
+				<td class="formValue">
+					<input type="text" class="form-control" placeholder="入库数量" v-model="repertory.num" isvalid="yes" checkexpession="NotNull">
+				</td>
+			</tr>
+			<tr>
+				<td class="formTitle">材料<font face="宋体">*</font></td>
+				<td class="formValue">
+					<select id="materialList" type="text" class="form-control" readonly="readonly" disabled="disabled" v-model="repertory.materialName" isvalid="yes" checkexpession="NotNull">
+						<option value=""></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="formTitle formTitle-top">备注</td>
+				<td class="formValue">
+					<textarea class="form-control" rows="4" placeholder="备注" v-model="repertory.remarks"></textarea>
+				</td>
+			</tr>
+		</table>
+	</div>
+	#parse("include/footer.html")
+	<script
+		src="${rc.contextPath}/statics/js/base/repertory/edit.js?_${date.systemTime}"></script>
+</body>
+</html>

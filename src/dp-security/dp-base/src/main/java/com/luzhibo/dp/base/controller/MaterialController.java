@@ -2,17 +2,16 @@ package com.luzhibo.dp.base.controller;
 
 import com.luzhibo.dp.base.entity.TmMaterialEntity;
 import com.luzhibo.dp.base.service.TmMaterialService;
+import com.luzhibo.dp.base.vo.MaterialListVo;
 import com.luzhibo.dp.common.annotation.SysLog;
 import com.luzhibo.dp.common.controller.AbstractController;
 import com.luzhibo.dp.common.entity.Page;
 import com.luzhibo.dp.common.entity.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -54,5 +53,11 @@ public class MaterialController extends AbstractController {
     @RequestMapping("/remove")
     public R batchRemove (@RequestBody Long[] ids){
         return tmMaterialService.batchRemove(ids);
+    }
+
+    @RequestMapping("/findSelectAll")
+    @ResponseBody
+    public List<MaterialListVo> findSelectAll(){
+        return tmMaterialService.listMaterial();
     }
 }

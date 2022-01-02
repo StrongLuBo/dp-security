@@ -53,7 +53,9 @@
         </where>
         order by t.create_time desc
     </select>
-
+    <select id="list" resultType="com.luzhibo.dp.base.entity.TmMaterialEntity">
+        select <include refid="Base_Column_List"/> from tm_material t order by t.create_time desc
+    </select>
     <insert id="save">
         insert into tm_material(
             name,
@@ -74,8 +76,8 @@
                    #{specification},
                    #{unit},
                    #{price},
-                   #{stocks},
-                   #{total},
+                   0,
+                   0,
                    #{description},
                    #{cost},
                    #{valid},

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.luzhibo.dp.base.dao.TmRepertoryMapper">
+
+    <resultMap id="BaseResultMap" type="com.luzhibo.dp.base.entity.TmRepertoryEntity">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="num" column="num" jdbcType="INTEGER"/>
+        <result property="tmMaterialId" column="tm_material_id" jdbcType="INTEGER"/>
+        <result property="materialName" column="material_name" jdbcType="VARCHAR"/>
+        <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,
+        status,
+        num,
+        tm_material_id,
+        material_name,
+        remarks,
+        create_time,
+        create_user,
+        update_time,
+        update_user
+    </sql>
+    <select id="listForPage" resultType="com.luzhibo.dp.base.entity.TmRepertoryEntity">
+        select
+        <include refid="Base_Column_List"/>
+        from  tm_repertory t
+        <where>
+            <if test="status != null and status.trim() != ''">
+                AND t.status LIKE concat('%',#{status},'%')
+            </if>
+            <if test="materialName != null and materialName.trim() != ''">
+                AND t.material_name LIKE concat('%',#{materialName},'%')
+            </if>
+        </where>
+        order by t.create_time desc
+    </select>
+
+    <insert id="save">
+        insert into tm_repertory(
+            status,
+            num,
+            tm_material_id,
+            material_name,
+            remarks,
+            create_time,
+            create_user
+        )values(
+                  #{status},
+                  #{num},
+                  #{tmMaterialId},
+                  #{materialName},
+                  #{remarks},
+                  now(),
+                  #{createUser}
+               )
+    </insert>
+
+    <select id="findById" resultType="com.luzhibo.dp.base.entity.TmRepertoryEntity">
+        select <include refid="Base_Column_List"/>
+        from tm_repertory t where t.id = #{id}
+
+    </select>
+
+    <update id="update">
+        UPDATE tm_repertory
+        <set>
+            <if test="status != null">status = #{status}, </if>
+            <if test="num != null">num = #{num}, </if>
+            <if test="tmMaterialId != null">tm_material_id = #{tmMaterialId}, </if>
+            <if test="materialName != null">material_name = #{materialName}, </if>
+            <if test="remarks != null">remarks = #{remarks}, </if>
+            update_time = now(),
+            <if test="updateUser != null">update_user = #{updateUser}, </if>
+        </set>
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="batchRemove">
+        DELETE
+        FROM
+        tm_repertory t
+        WHERE
+        t.id IN
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

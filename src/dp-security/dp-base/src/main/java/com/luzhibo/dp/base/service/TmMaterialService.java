@@ -2,9 +2,11 @@ package com.luzhibo.dp.base.service;
 
 import com.luzhibo.dp.base.entity.TmMaterialEntity;
 import com.luzhibo.dp.base.entity.TmOrderEntity;
+import com.luzhibo.dp.base.vo.MaterialListVo;
 import com.luzhibo.dp.common.entity.Page;
 import com.luzhibo.dp.common.entity.R;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -46,4 +48,10 @@ public interface TmMaterialService {
      * @return R
      */
     R batchRemove(Long[] id);
+
+    /**
+     * 查询建材列表
+     * @return
+     */
+    List<MaterialListVo> listMaterial();
 }
