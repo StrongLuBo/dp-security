@@ -1,0 +1,12 @@
+com\luzhibo\dp\orm\dialect\OracleDialect.class
+com\luzhibo\dp\orm\dialect\MSDialect.class
+com\luzhibo\dp\orm\dialect\MySql5PageHepler.class
+com\luzhibo\dp\orm\dialect\PostgreDialect.class
+com\luzhibo\dp\orm\dialect\MySql5Dialect.class
+com\luzhibo\dp\orm\dialect\PostgrePageHepler.class
+com\luzhibo\dp\orm\plugins\PaginationStatementHandlerInterceptor.class
+com\luzhibo\dp\orm\dialect\Dialect.class
+com\luzhibo\dp\orm\dialect\DialectFactory.class
+com\luzhibo\dp\orm\mybatis\PackagesSqlSessionFactoryBean.class
+com\luzhibo\dp\orm\plugins\PaginationResultSetHandlerInterceptor.class
+com\luzhibo\dp\orm\dialect\MSPageHepler.class

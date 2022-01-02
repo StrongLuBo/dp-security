@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luzhibo.dp.base.dao.TmCustomerMapper">
+
+    <resultMap id="BaseResultMap" type="com.luzhibo.dp.base.entity.TmCustomerEntity">
+            <id property="customerId" column="customer_id" jdbcType="INTEGER"/>
+            <result property="cName" column="c_name" jdbcType="VARCHAR"/>
+            <result property="cMobile" column="c_mobile" jdbcType="VARCHAR"/>
+            <result property="cAddress" column="c_address" jdbcType="VARCHAR"/>
+            <result property="cStatus" column="c_status" jdbcType="TINYINT"/>
+            <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        customer_id,
+        c_name,
+        c_mobile,
+        c_address,
+        c_status,
+        remarks,
+        create_time,
+        create_user,
+        update_time,
+        update_user
+    </sql>
+    <select id="listForPage" resultType="com.luzhibo.dp.base.entity.TmCustomerEntity">
+        select
+        <include refid="Base_Column_List"/>
+        from  tm_customer t
+        <where>
+            <if test="cName != null and cName.trim() != ''">
+                AND t.c_name LIKE concat('%',#{cName},'%')
+            </if>
+            <if test="cMobile != null and cMobile.trim() != ''">
+                AND t.c_mobile LIKE concat('%',#{cMobile},'%')
+            </if>
+        </where>
+        order by t.create_time desc
+    </select>
+
+    <insert id="save">
+        insert into tm_customer(
+            c_name,
+            c_mobile,
+            c_address,
+            c_status,
+            remarks,
+            create_time,
+            create_user
+        )values(
+        #{cName},
+        #{cMobile},
+        #{cAddress},
+        #{cStatus},
+        #{remarks},
+        now(),
+        #{createUser}
+        )
+    </insert>
+
+    <select id="findById" resultType="com.luzhibo.dp.base.entity.TmCustomerEntity">
+        select <include refid="Base_Column_List"/>
+        from tm_customer t where t.customer_id = #{customerId}
+
+    </select>
+
+    <update id="update">
+        UPDATE tm_customer
+        <set>
+            <if test="cName != null">c_name = #{cName}, </if>
+            <if test="cMobile != null">c_mobile = #{cMobile}, </if>
+            <if test="cAddress != null">c_address = #{cAddress}, </if>
+            <if test="cStatus != null">c_status = #{cStatus}, </if>
+            <if test="remarks != null">remarks = #{remarks}, </if>
+            update_time = now(),
+            <if test="updateUser != null">update_user = #{updateUser}, </if>
+        </set>
+        WHERE
+        customer_id = #{customerId}
+    </update>
+
+    <delete id="batchRemove">
+        DELETE
+        FROM
+        tm_customer t
+        WHERE
+        t.customer_id IN
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

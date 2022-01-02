@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>新增-客户管理</title>
+#parse("include/header.html")
+</head>
+<body>
+	<div id="dpLTE" class="container-fluid" v-cloak>
+		<table class="form" id="form">
+			<tr>
+	            <td class="formTitle">客户名称<font face="宋体">*</font></td>
+	            <td class="formValue">
+					<input type="text" class="form-control" placeholder="客户名称" v-model="customer.cName" isvalid="yes" checkexpession="NotNull">
+	            </td>
+        	</tr>
+        	<tr>
+	            <td class="formTitle">联系电话<font face="宋体">*</font></td>
+	            <td class="formValue">
+					<input type="text" class="form-control" placeholder="联系电话" v-model="customer.cMobile" isvalid="yes" checkexpession="NotNull">
+	            </td>
+        	</tr>
+			<tr>
+				<td class="formTitle">家庭地址<font face="宋体">*</font></td>
+				<td class="formValue">
+					<input type="text" class="form-control" placeholder="家庭地址" v-model="customer.cAddress" isvalid="yes" checkexpession="NotNull">
+				</td>
+			</tr>
+			<tr>
+				<td class="formTitle">客户状态<font face="宋体">*</font></td>
+				<td class="formValue">
+					<select autocomplete="off" class="form-control" placeholder="客户状态" v-model="customer.cStatus" isvalid="yes" checkexpession="NotNull">
+						<option  selected="selected"  value="0"  >启用</option>
+						<option  value="1">禁用</option>
+					</select>
+				</td>
+			</tr>
+        	<tr>
+	            <td class="formTitle formTitle-top">备注</td>
+	            <td class="formValue">
+					<textarea class="form-control" rows="4" placeholder="备注" v-model="customer.remarks"></textarea>
+	            </td>
+        	</tr>
+		</table>
+	</div>
+	#parse("include/footer.html")
+	<script
+		src="${rc.contextPath}/statics/js/base/customer/add.js?_${date.systemTime}"></script>
+</body>
+</html>
