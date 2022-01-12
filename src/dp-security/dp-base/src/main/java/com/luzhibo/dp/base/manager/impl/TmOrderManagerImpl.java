@@ -48,4 +48,9 @@ public class TmOrderManagerImpl implements TmOrderManager {
     public int batchRemove(Long[] id) {
         return tmOrderMapper.batchRemove(id);
     }
+
+    @Override
+    public int updateOrderSuccess(TmOrderEntity tmOrderEntity) {
+        return tmOrderMapper.updateOrderSuccess(tmOrderEntity);
+    }
 }

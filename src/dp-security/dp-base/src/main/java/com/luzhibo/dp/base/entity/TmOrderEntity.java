@@ -13,6 +13,9 @@ import java.util.Date;
  */
 @Data
 public class TmOrderEntity implements Serializable {
+
+    public final static Integer ORDERSTATUS_0=0;
+    public final static Integer ORDERSTATUS_1=1;
     /**
      * 订单ID
      */

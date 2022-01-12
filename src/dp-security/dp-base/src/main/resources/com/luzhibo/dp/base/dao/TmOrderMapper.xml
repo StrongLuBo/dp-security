@@ -42,6 +42,9 @@
             <if test="orderNo != null and orderNo.trim() != ''">
                 AND order_no LIKE concat('%',#{orderNo},'%')
             </if>
+            <if test="orderStatus != null and orderStatus.trim() != ''">
+                AND order_status =#{orderStatus}
+            </if>
         </where>
         order by t.create_time desc
     </select>
@@ -63,7 +66,7 @@
                  #{orderStatus},
                  #{payMoneySum},
                  #{remarks},
-                 now(),
+                 #{createTime},
                  #{createUser}
                         )
     </insert>
@@ -82,7 +85,7 @@
             <if test="orderStatus != null">order_status = #{orderStatus}, </if>
             <if test="payMoneySum != null">pay_money_sum = #{payMoneySum}, </if>
             <if test="remarks != null">remarks = #{remarks}, </if>
-            update_time = now(),
+            <if test="updateTime != null">update_time = #{updateTime}, </if>
             <if test="updateUser != null">update_user = #{updateUser}, </if>
         </set>
         WHERE
@@ -98,4 +101,8 @@
             #{id}
         </foreach>
     </delete>
+
+    <update id="updateOrderSuccess">
+        update tm_order t set t.order_status=1,t.update_time=#{updateTime},t.update_user=#{updateUser} where t.order_id=#{orderId}
+    </update>
 </mapper>

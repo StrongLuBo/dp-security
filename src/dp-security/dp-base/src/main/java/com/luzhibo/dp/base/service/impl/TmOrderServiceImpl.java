@@ -50,4 +50,9 @@ public class TmOrderServiceImpl implements TmOrderService{
     public R batchRemove(Long[] id) {
         return CommonUtils.msg(tmOrderManager.batchRemove(id));
     }
+
+    @Override
+    public R updateOrderSuccess(TmOrderEntity tmOrderEntity) {
+        return CommonUtils.msg(tmOrderManager.updateOrderSuccess(tmOrderEntity));
+    }
 }

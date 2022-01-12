@@ -49,4 +49,11 @@ public interface TmOrderManager {
      * @return
      */
     int batchRemove(Long[] id);
+
+    /**
+     * 批量完成订单
+     * @param tmOrderEntity
+     * @return
+     */
+    int updateOrderSuccess(TmOrderEntity tmOrderEntity);
 }

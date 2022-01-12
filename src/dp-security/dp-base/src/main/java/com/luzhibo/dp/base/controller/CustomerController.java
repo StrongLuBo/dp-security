@@ -3,6 +3,7 @@ package com.luzhibo.dp.base.controller;
 import com.luzhibo.dp.base.entity.TmCustomerEntity;
 import com.luzhibo.dp.base.entity.TmOrderEntity;
 import com.luzhibo.dp.base.service.TmCustomerService;
+import com.luzhibo.dp.base.vo.CustomerListVo;
 import com.luzhibo.dp.common.annotation.SysLog;
 import com.luzhibo.dp.common.controller.AbstractController;
 import com.luzhibo.dp.common.entity.Page;
@@ -10,9 +11,12 @@ import com.luzhibo.dp.common.entity.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,6 +51,7 @@ public class CustomerController extends AbstractController {
     @RequestMapping("/update")
     public R update(@RequestBody TmCustomerEntity tmCustomerEntity){
         tmCustomerEntity.setUpdateUser(getUser().getUsername());
+        tmCustomerEntity.setUpdateTime(new Date());
         return tmCustomerService.updateCustomer(tmCustomerEntity);
     }
 
@@ -54,5 +59,19 @@ public class CustomerController extends AbstractController {
     @RequestMapping("/remove")
     public R batchRemove(@RequestBody Long[] ids){
         return tmCustomerService.batchRemove(ids);
+    }
+
+    @RequestMapping("/findCustomerAll")
+    @ResponseBody
+    public List<CustomerListVo> findCustomerAll(){
+        List<TmCustomerEntity> entities = tmCustomerService.listAll();
+        List<CustomerListVo> customerListVos = new ArrayList<>();
+        for (TmCustomerEntity entity : entities) {
+            CustomerListVo customerListVo = new CustomerListVo();
+            customerListVo.setCustomerId(entity.getCustomerId());
+            customerListVo.setCName(entity.getCName());
+            customerListVos.add(customerListVo);
+        }
+        return customerListVos;
     }
 }

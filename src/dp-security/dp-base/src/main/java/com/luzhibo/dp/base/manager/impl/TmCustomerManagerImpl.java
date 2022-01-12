@@ -48,4 +48,9 @@ public class TmCustomerManagerImpl implements TmCustomerManager {
     public int batchRemove(Long[] id) {
         return tmCustomerMapper.batchRemove(id);
     }
+
+    @Override
+    public List<TmCustomerEntity> listAll() {
+        return tmCustomerMapper.list();
+    }
 }

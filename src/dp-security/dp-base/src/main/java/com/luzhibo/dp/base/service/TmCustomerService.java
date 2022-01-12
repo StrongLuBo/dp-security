@@ -48,4 +48,10 @@ public interface TmCustomerService{
      * @return R
      */
     R batchRemove(Long[] id);
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    List<TmCustomerEntity> listAll();
 }

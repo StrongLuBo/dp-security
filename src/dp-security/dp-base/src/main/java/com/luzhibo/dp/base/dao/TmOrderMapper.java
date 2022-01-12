@@ -9,4 +9,11 @@ import org.mybatis.spring.annotation.MapperScan;
  */
 @MapperScan
 public interface TmOrderMapper extends BaseMapper<TmOrderEntity> {
+
+    /**
+     * 批量完成订单
+     * @param tmOrderEntity
+     * @return
+     */
+    int updateOrderSuccess(TmOrderEntity tmOrderEntity);
 }

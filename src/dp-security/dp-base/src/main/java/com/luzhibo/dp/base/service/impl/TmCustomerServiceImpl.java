@@ -53,4 +53,9 @@ public class TmCustomerServiceImpl implements TmCustomerService {
     public R batchRemove(Long[] id) {
         return CommonUtils.msg(tmCustomerManager.batchRemove(id));
     }
+
+    @Override
+    public List<TmCustomerEntity> listAll() {
+        return tmCustomerManager.listAll();
+    }
 }

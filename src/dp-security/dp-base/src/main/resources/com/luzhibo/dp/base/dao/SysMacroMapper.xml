@@ -60,7 +60,7 @@
 			#{type},
 			#{orderNum}, 
 			#{remark}, 
-			now()
+			#{gmtCreate}
 		)
 	</insert>
 	
@@ -98,7 +98,7 @@
 			<if test="type != null">type = #{type}, </if>
 			<if test="orderNum != null">order_num = #{orderNum}, </if>
 			<if test="remark != null">remark = #{remark}, </if>
-			gmt_modified = NOW()
+			<if test="gmtModified != null">gmt_modified = #{gmtModified}, </if>
 		</set>
 		WHERE
 			macro_id = #{macroId}

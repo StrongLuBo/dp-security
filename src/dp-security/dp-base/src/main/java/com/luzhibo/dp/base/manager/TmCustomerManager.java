@@ -25,4 +25,6 @@ public interface TmCustomerManager {
     int update(TmCustomerEntity order);
 
     int batchRemove(Long[] id);
+
+    List<TmCustomerEntity> listAll();
 }

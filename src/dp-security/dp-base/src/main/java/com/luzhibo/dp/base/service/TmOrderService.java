@@ -48,4 +48,13 @@ public interface TmOrderService {
      * @return R
      */
     R batchRemove(Long[] id);
+
+
+    /**
+     * 批量完成订单
+     * @param tmOrderEntity
+     * @return
+     */
+    R updateOrderSuccess(TmOrderEntity tmOrderEntity);
+
 }

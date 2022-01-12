@@ -46,6 +46,7 @@ public class MaterialController extends AbstractController {
     @RequestMapping("/update")
     public R update(@RequestBody TmMaterialEntity tmMaterialEntity){
         tmMaterialEntity.setUpdateUser(getUser().getUsername());
+        tmMaterialEntity.setUpdateTime(new Date());
         return tmMaterialService.update(tmMaterialEntity);
     }
 

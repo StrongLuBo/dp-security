@@ -20,6 +20,7 @@ function getGrid() {
 		queryParams: function(params){
 			params.orderNo = vm.orderNo;
 			params.customerName = vm.customerName;
+			params.orderStatus = vm.orderStatus;
 			return params;
 		},
 		columns: [{
@@ -39,7 +40,15 @@ function getGrid() {
 		},{
 			field : "orderStatus",
 			title : "订单状态",
-			width : "200px"
+			width : "200px",
+			formatter: function(value,row,index){
+				if(value === 0){
+					return '进行中';
+				}
+				if(value === 1){
+					return '已完成';
+				}
+			}
 		},{
 			field : "payMoneySum",
 			title : "已支付金额",
@@ -72,7 +81,8 @@ var vm = new Vue({
 	el:'#dpLTE',
 	data: {
 		orderNo: null,
-		customerName: null
+		customerName: null,
+		orderStatus: null
 	},
 	methods : {
 		load: function() {
@@ -80,7 +90,7 @@ var vm = new Vue({
 		},
 		save: function() {
 			dialogOpen({
-				title: '新增角色',
+				title: '新增订单',
 				url: 'base/order/add.html?_' + $.now(),
 				width: '420px',
 				height: '320px',
@@ -93,7 +103,7 @@ var vm = new Vue({
 			var ck = $('#dataGrid').bootstrapTable('getSelections');
 			if(checkedRow(ck)){
 				dialogOpen({
-					title: '编辑角色',
+					title: '编辑订单',
 					url: 'base/order/edit.html?_' + $.now(),
 					width: '420px',
 					height: '320px',
@@ -122,5 +132,43 @@ var vm = new Vue({
 				});
 			}
 		},
+		updateStatus: function() {
+			var ck = $('#dataGrid').bootstrapTable('getSelections');
+			if(checkedRow(ck)){
+				var s=ck[0].orderStatus;
+				if (s==1){
+					dialogAlert('已完成的订单，请重新选择！');
+					return;
+				}
+				dialogConfirm("注：您确定要完成订单吗？该操作将无法恢复", function() {
+					dialogLoading(true);
+					window.setTimeout(function() {
+						var postdata = ck[0].orderId;
+						$.ajax({
+							url : '/base/order/updateOrderSuccess?orderId='+postdata,
+							type : 'get',
+							success : function(data) {
+								if (data.code == '500') {
+									dialogAlert(data.msg, 'error');
+								} else if (data.code == '0') {
+									dialogMsg(data.msg, 'success');
+									vm.load();
+								}
+							},
+							error : function(XMLHttpRequest, textStatus, errorThrown) {
+								dialogLoading(false);
+								dialogMsg(errorThrown, 'error');
+							},
+							beforeSend : function() {
+								dialogLoading(true);
+							},
+							complete : function() {
+								dialogLoading(false);
+							}
+						});
+					}, 500);
+				});
+			}
+		}
 	}
 })

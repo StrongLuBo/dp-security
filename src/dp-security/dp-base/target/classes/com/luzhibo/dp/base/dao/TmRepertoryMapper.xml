@@ -59,7 +59,7 @@
                   #{tmMaterialId},
                   #{materialName},
                   #{remarks},
-                  now(),
+                  #{createTime},
                   #{createUser}
                )
     </insert>
@@ -78,7 +78,7 @@
             <if test="tmMaterialId != null">tm_material_id = #{tmMaterialId}, </if>
             <if test="materialName != null">material_name = #{materialName}, </if>
             <if test="remarks != null">remarks = #{remarks}, </if>
-            update_time = now(),
+            <if test="updateTime != null">update_time = #{updateTime}, </if>
             <if test="updateUser != null">update_user = #{updateUser}, </if>
         </set>
         WHERE

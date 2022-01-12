@@ -81,7 +81,7 @@
                    #{description},
                    #{cost},
                    #{valid},
-                   now(),
+                   #{createTime},
                    #{createUser}
                )
     </insert>
@@ -105,7 +105,7 @@
             <if test="description != null">description = #{description}, </if>
             <if test="cost != null">cost = #{cost}, </if>
             <if test="valid != null">valid = #{valid}, </if>
-            update_time = now(),
+            <if test="updateTime != null">update_time = #{updateTime}, </if>
             <if test="updateUser != null">update_user = #{updateUser}, </if>
         </set>
         WHERE

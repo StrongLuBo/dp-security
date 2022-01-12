@@ -8,21 +8,27 @@
 	<div id="dpLTE" class="container-fluid" v-cloak>
 		<table class="form" id="form">
 			<tr>
-	            <td class="formTitle">角色名称<font face="宋体">*</font></td>
+	            <td class="formTitle">客户名称<font face="宋体">*</font></td>
 	            <td class="formValue">
-					<input type="text" class="form-control" placeholder="角色名称" v-model="role.roleName" isvalid="yes" checkexpession="NotNull">
+					<select class="form-control" id="customerList" v-model="order.customerName" isvalid="yes" checkexpession="NotNull">
+						<option value="" ></option>
+					</select>
 	            </td>
         	</tr>
         	<tr>
-	            <td class="formTitle">角色标识<font face="宋体">*</font></td>
+	            <td class="formTitle">订单状态<font face="宋体">*</font></td>
 	            <td class="formValue">
-					<input type="text" class="form-control" placeholder="多个用逗号分隔，如：admin,guest" v-model="role.roleSign" isvalid="yes" checkexpession="NotNull">
+					<select class="form-control" id="orderList" type="select" disabled="disabled" v-model="order.orderStatus" isvalid="yes" checkexpession="NotNull">
+						<option value="" ></option>
+						<option value="0" >进行中</option>
+						<option value="1">已完成</option>
+					</select>
 	            </td>
         	</tr>
         	<tr>
 	            <td class="formTitle formTitle-top">备注</td>
 	            <td class="formValue">
-					<textarea class="form-control" rows="4" placeholder="备注" v-model="role.remark"></textarea>
+					<textarea class="form-control" rows="4" placeholder="备注" v-model="order.remarks"></textarea>
 	            </td>
         	</tr>
 		</table>

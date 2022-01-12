@@ -19,7 +19,8 @@ function getGrid() {
 		height: $(window).height()-54,
 		queryParams: function(params){
 			params.cName = vm.cName;
-			params.cMobile = vm.cMobile
+			params.cMobile = vm.cMobile;
+			params.cStatus = vm.cStatus;
 			return params;
 		},
 		columns: [{
@@ -80,7 +81,8 @@ var vm = new Vue({
 	el:'#dpLTE',
 	data: {
 		cName: null,
-		cMobile: null
+		cMobile: null,
+		cStatus: null
 	},
 	methods : {
 		load: function() {

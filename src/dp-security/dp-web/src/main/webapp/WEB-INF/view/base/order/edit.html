@@ -7,23 +7,29 @@
 	<div id="dpLTE" class="container-fluid" v-cloak>
 		<table class="form" id="form">
 			<tr>
-	            <td class="formTitle">角色名称<font face="宋体">*</font></td>
-	            <td class="formValue">
-					<input type="text" class="form-control" placeholder="角色名称" v-model="order.roleName" isvalid="yes" checkexpession="NotNull">
-	            </td>
-        	</tr>
-        	<tr>
-	            <td class="formTitle">角色标识<font face="宋体">*</font></td>
-	            <td class="formValue">
-					<input type="text" class="form-control" placeholder="角色标识" v-model="order.roleSign" isvalid="yes" checkexpession="NotNull">
-	            </td>
-        	</tr>
-        	<tr>
-	            <td class="formTitle formTitle-top">备注</td>
-	            <td class="formValue">
-					<textarea class="form-control" rows="4" placeholder="备注" v-model="order.remark"></textarea>
-	            </td>
-        	</tr>
+				<td class="formTitle">客户名称<font face="宋体">*</font></td>
+				<td class="formValue">
+					<select class="form-control" id="customerList" disabled="disabled" readonly="readonly" v-model="order.customerName" isvalid="yes" checkexpession="NotNull">
+						<option value="" ></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="formTitle">订单状态<font face="宋体">*</font></td>
+				<td class="formValue">
+					<select class="form-control" id="orderList" type="select" disabled="disabled" readonly="readonly" v-model="order.orderStatus" isvalid="yes" checkexpession="NotNull">
+						<option value="" ></option>
+						<option value="0" >进行中</option>
+						<option value="1">已完成</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="formTitle formTitle-top">备注</td>
+				<td class="formValue">
+					<textarea class="form-control" rows="4" placeholder="备注" v-model="order.remarks"></textarea>
+				</td>
+			</tr>
 		</table>
 	</div>
 	#parse("include/footer.html")
